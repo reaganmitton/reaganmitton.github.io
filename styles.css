@@ -24,6 +24,7 @@ h1 {
   text-shadow: 0 0 8px #00bfff, 0 0 15px #0077cc;
 }
 
+/*text*/
 p {
   font-size: 1.1rem;
   color: #a0a0a0;
@@ -191,7 +192,7 @@ p {
 
 .robo-pics img {
   width: 500px;      
-  height: 270px;
+  height: 360px;
   object-fit: cover;
   border-radius: 3px;
   border: 1px solid white;
@@ -231,4 +232,64 @@ p {
   box-shadow:
     0 0 8px rgba(255, 255, 255, 0.9),
     0 0 14px #00bfff;
+}
+
+/* Insta Pics for the Contacts Page */
+.insta-pics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: nowrap; /*  keeps them side-by-side */
+}
+
+.insta-pics img {
+  width: 500px;      
+  height: 800px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 2px solid white;
+  box-shadow:
+    0 0 4px rgba(255, 255, 255, 0.6),
+    0 0 6px rgba(0, 191, 255, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ====== ACCOMPLISHMENTS PAGE STYLES ====== */
+
+/* Container left-align override */
+.container.accomplishments {
+  text-align: left;
+}
+
+/* Back Button */
+.meet-button {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #00bfff, #0077cc);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0,191,255,0.4);
+  transition: all 0.3s ease;
+}
+
+.meet-button:hover {
+  background: linear-gradient(135deg, #0077cc, #00bfff);
+  box-shadow: 0 6px 25px rgba(0,191,255,0.6);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 { font-size: 2.2rem; }
+  ul > li { font-size: 1.2rem; }
+  ul ul { font-size: 0.95rem; margin-left: 20px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 40px 15px; }
 }

@@ -1,4 +1,4 @@
-/* ====== GLOBAL STYLES ====== */
+/* ====== Writing Style For Everything ====== */
 body {
   font-family: 'Segoe UI', 'Arial', sans-serif;
   background: linear-gradient(135deg, #0d0f1a, #1a2238); /* dark tech background */
@@ -43,6 +43,7 @@ p {
   transition: all 0.3s ease;
 }
 
+/*Hover over the button*/
 .meet-button:hover {
   background: linear-gradient(135deg, #0077cc, #00bfff);
   box-shadow: 0 6px 25px rgba(0,191,255,0.6);
@@ -130,4 +131,104 @@ p {
   .meet-button {
     padding: 10px 20px;
   }
+}
+
+/* ====== Team Pictures(GROUP) ====== */
+.team-pics-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #a0cfff;
+  letter-spacing: 1px;
+  margin: 25px 0 15px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.team-pics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 35px;
+  flex-wrap: nowrap; /*  keeps them side-by-side */
+}
+
+.team-pics img {
+  width: 300px;      
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid white;
+  box-shadow:
+    0 0 4px rgba(255, 255, 255, 0.6),
+    0 0 6px rgba(0, 191, 255, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-pics img:hover {
+  transform: translateY(-3px) scale(1.07);
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 14px #00bfff;
+}
+
+.team-pics img:nth-child(odd) {
+  transform: rotate(-2deg);
+}
+.team-pics img:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+/* ====== Robot Pics ====== */
+.robo-pics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 35px;
+  flex-wrap: nowrap; /*  keeps them side-by-side */
+}
+
+.robo-pics img {
+  width: 500px;      
+  height: 270px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid white;
+  box-shadow:
+    0 0 4px rgba(255, 255, 255, 0.6),
+    0 0 6px rgba(0, 191, 255, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* CURSOR */
+.star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow:
+    0 0 6px white,
+    0 0 10px #00bfff;
+  animation: sparkleFade 0.6s ease-out forwards;
+}
+
+@keyframes sparkleFade {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+.robo-pics img:hover {
+  transform: translateY(-3px) scale(1.07);
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 14px #00bfff;
 }

@@ -1,4 +1,4 @@
-/* ====== Writing Style For Everything ====== */
+/* ====== GLOBAL STYLES ====== */
 body {
   font-family: 'Segoe UI', 'Arial', sans-serif;
   background: linear-gradient(135deg, #0d0f1a, #1a2238); /* dark tech background */
@@ -7,33 +7,55 @@ body {
   color: #e0e0e0;
 }
 
-/* Container */
+/* ====== CONTAINER ====== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
-  text-align: center;
+  text-align: center; /* default center; override for accomplishments page */
 }
 
-/* Headings */
+/* Left-align text for accomplishments page */
+.container.accomplishments-page {
+  text-align: left;
+}
+
+/* ====== HEADINGS ====== */
 h1 {
   font-size: 3rem;
-  color: #00bfff; /* electric blue */
+  color: #00bfff;
   letter-spacing: 2px;
   margin-bottom: 10px;
   text-shadow: 0 0 8px #00bfff, 0 0 15px #0077cc;
 }
 
-/*text*/
+h2 {
+  font-size: 2rem;
+  color: #00bfff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px #00bfff, 0 0 10px #0077cc;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: #a0cfff;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 4px #a0cfff, 0 0 8px #0077cc;
+}
+
 p {
   font-size: 1.1rem;
   color: #a0a0a0;
   margin-bottom: 40px;
 }
 
-/* Call-to-Action Button */
+/* ====== BUTTONS ====== */
 .meet-button {
   display: inline-block;
+  margin-top: 40px;
   padding: 12px 25px;
   background: linear-gradient(135deg, #00bfff, #0077cc);
   color: white;
@@ -44,14 +66,31 @@ p {
   transition: all 0.3s ease;
 }
 
-/*Hover over the button*/
 .meet-button:hover {
   background: linear-gradient(135deg, #0077cc, #00bfff);
   box-shadow: 0 6px 25px rgba(0,191,255,0.6);
   transform: translateY(-2px);
 }
 
-/* ====== TEAM GRID ====== */
+/* ====== LISTS ====== */
+ul {
+  padding-left: 25px;
+  margin-bottom: 25px;
+}
+
+li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #c0dfff; /* subtle neon glow for bullets */
+}
+
+/* Highlight Awards differently */
+.awards li {
+  color: #c0dfff;
+  font-weight: 600;
+}
+
+/* ====== TEAM PAGE ====== */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -59,150 +98,219 @@ p {
   margin-top: 40px;
 }
 
-/* ====== TEAM MEMBER CARDS ====== */
 .team-member {
-  background: linear-gradient(145deg, #12142b, #1f223f); /* dark tech gradient */
+  background: linear-gradient(145deg, #12142b, #1f223f);
   border-radius: 20px;
   padding: 30px 20px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5), 0 0 15px #0077cc40 inset;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   border: 1px solid rgba(0,191,255,0.2);
 }
 
 .team-member:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0,191,255,0.4), 0 0 25px #00bfff70 inset;
+  box-shadow: 0 12px 30px rgba(0,191,255,0.4);
 }
 
-/* ====== MEMBER PHOTO ====== */
 .member-pic {
   width: 140px;
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15px;
   border: 3px solid #00bfff;
-  box-shadow: 0 0 12px #00bfff80, 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 12px #00bfff80;
 }
 
-.team-member:hover .member-pic {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px #00bfff, 0 6px 15px rgba(0,0,0,0.4);
-}
-
-/* ====== MEMBER INFO ====== */
 .team-member h3 {
-  margin: 10px 0 5px 0;
-  font-size: 1.4rem;
-  text-align: center;
   color: #00bfff;
-  font-weight: 700;
-  text-shadow: 0 0 5px #00bfff, 0 0 10px #0077cc;
+  margin-top: 15px;
 }
 
 .team-member p {
-  margin: 2px 0;
   font-size: 1rem;
   color: #a0cfff;
-  text-align: center;
+}
+
+/* ====== GROUP PHOTOS ====== */
+.team-pics {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.team-pics img {
+  width: 280px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid white;
+  transition: transform 0.25s ease;
+}
+
+.team-pics img:hover {
+  transform: scale(1.07);
+}
+
+/* ====== ROBOT PAGE ====== */
+.robo-pics {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.robo-pics img {
+  width: 500px;
+  height: 360px;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.robo-pics img:hover {
+  transform: scale(1.07);
+}
+
+/* ====== CONTACTS PAGE ====== */
+.insta-pics {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.insta-pics img {
+  width: 500px;
+  height: 800px;
+  object-fit: cover;
+}
+
+/* ====== ACCOMPLISHMENTS IMAGES ====== */
+.accomplishment-images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.accomplishment-images img {
+  width: 320px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #00bfff;
+  box-shadow:
+    0 0 8px #00bfff80,
+    0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accomplishment-images img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 14px #00bfff,
+    0 6px 15px rgba(0,0,0,0.4);
 }
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.2rem;
-  }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.1rem; }
 
-  .member-pic {
-    width: 120px;
-    height: 120px;
+  .member-pic { width: 120px; height: 120px; }
+
+  ul > li { font-size: 1.2rem; }
+  ul ul { font-size: 0.95rem; margin-left: 20px; }
+
+  .accomplishment-images img { width: 100%; height: auto; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 40px 15px; }
+  .accomplishment-images { gap: 10px; }
+
+  .team-grid { grid-template-columns: 1fr; gap: 25px; }
+  .meet-button { padding: 10px 20px; }
+}
+
+
+/*For Captions under pcutures*/
+/* Caption styling */
+.accomplishment-images figure {
+  margin: 0;
+  text-align: center;
+}
+
+.accomplishment-images figcaption {
+  color: #a0cfff;
+  font-size: 0.95rem;
+  margin-top: 8px;
+  text-shadow: 0 0 4px #a0cfff, 0 0 8px #0077cc;
+}
+
+/* Container for images with captions */
+.accomplishment-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;            /* space between images */
+  flex-wrap: wrap;       /* allow wrapping on smaller screens */
+  margin-top: 20px;
+}
+
+/* Each figure element */
+.accomplishment-images figure {
+  margin: 0;
+  text-align: center;
+  flex: 1 1 300px;      /* flex-grow, flex-shrink, base width */
+  max-width: 320px;     /* controls maximum image size */
+}
+
+/* Images themselves */
+.accomplishment-images img {
+  width: 100%;           /* fills the figure's width */
+  height: auto;          /* maintains aspect ratio */
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #00bfff;
+  box-shadow:
+    0 0 8px #00bfff80,
+    0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accomplishment-images img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 14px #00bfff,
+    0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* Caption styling */
+.accomplishment-images figcaption {
+  color: #a0cfff;
+  font-size: 0.95rem;
+  margin-top: 8px;
+  text-shadow: 0 0 4px #a0cfff, 0 0 8px #0077cc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .accomplishment-images figure {
+    flex: 1 1 45%;   /* two per row on tablets */
+    max-width: 280px;
   }
 }
 
 @media (max-width: 480px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .meet-button {
-    padding: 10px 20px;
+  .accomplishment-images figure {
+    flex: 1 1 100%;  /* full width on phones */
+    max-width: 100%;
   }
 }
 
-/* ====== Team Pictures(GROUP) ====== */
-.team-pics-header {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #a0cfff;
-  letter-spacing: 1px;
-  margin: 25px 0 15px;
-  text-transform: uppercase;
-  opacity: 0.85;
-}
 
-.team-pics {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 35px;
-  flex-wrap: nowrap; /*  keeps them side-by-side */
-}
+/*cursor*/
 
-.team-pics img {
-  width: 300px;      
-  height: 170px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 2px solid white;
-  box-shadow:
-    0 0 4px rgba(255, 255, 255, 0.6),
-    0 0 6px rgba(0, 191, 255, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.team-pics img:hover {
-  transform: translateY(-3px) scale(1.07);
-  box-shadow:
-    0 0 8px rgba(255, 255, 255, 0.9),
-    0 0 14px #00bfff;
-}
-
-.team-pics img:nth-child(odd) {
-  transform: rotate(-2deg);
-}
-.team-pics img:nth-child(even) {
-  transform: rotate(2deg);
-}
-
-/* ====== Robot Pics ====== */
-.robo-pics {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 35px;
-  flex-wrap: nowrap; /*  keeps them side-by-side */
-}
-
-.robo-pics img {
-  width: 500px;      
-  height: 360px;
-  object-fit: cover;
-  border-radius: 3px;
-  border: 1px solid white;
-  box-shadow:
-    0 0 4px rgba(255, 255, 255, 0.6),
-    0 0 6px rgba(0, 191, 255, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* CURSOR */
 .star {
   position: absolute;
   width: 6px;
@@ -218,78 +326,6 @@ p {
 }
 
 @keyframes sparkleFade {
-  from {
-    transform: scale(1);
-    opacity: 1;
-  }
-  to {
-    transform: scale(0);
-    opacity: 0;
-  }
-}
-.robo-pics img:hover {
-  transform: translateY(-3px) scale(1.07);
-  box-shadow:
-    0 0 8px rgba(255, 255, 255, 0.9),
-    0 0 14px #00bfff;
-}
-
-/* Insta Pics for the Contacts Page */
-.insta-pics {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 25px;
-  flex-wrap: nowrap; /*  keeps them side-by-side */
-}
-
-.insta-pics img {
-  width: 500px;      
-  height: 800px;
-  object-fit: cover;
-  border-radius: 2px;
-  border: 2px solid white;
-  box-shadow:
-    0 0 4px rgba(255, 255, 255, 0.6),
-    0 0 6px rgba(0, 191, 255, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* ====== ACCOMPLISHMENTS PAGE STYLES ====== */
-
-/* Container left-align override */
-.container.accomplishments {
-  text-align: left;
-}
-
-/* Back Button */
-.meet-button {
-  display: inline-block;
-  margin-top: 40px;
-  padding: 12px 25px;
-  background: linear-gradient(135deg, #00bfff, #0077cc);
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0,191,255,0.4);
-  transition: all 0.3s ease;
-}
-
-.meet-button:hover {
-  background: linear-gradient(135deg, #0077cc, #00bfff);
-  box-shadow: 0 6px 25px rgba(0,191,255,0.6);
-  transform: translateY(-2px);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  h1 { font-size: 2.2rem; }
-  ul > li { font-size: 1.2rem; }
-  ul ul { font-size: 0.95rem; margin-left: 20px; }
-}
-
-@media (max-width: 480px) {
-  .container { padding: 40px 15px; }
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(0); opacity: 0; }
 }

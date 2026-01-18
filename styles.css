@@ -329,3 +329,95 @@ li {
   from { transform: scale(1); opacity: 1; }
   to { transform: scale(0); opacity: 0; }
 }
+
+
+
+/*for the chart on the sponsorship tab*/
+/* ====== SPONSOR BENEFITS CHART ====== */
+
+/* Custom heading */
+h22 {
+  display: block;
+  font-size: 2.9 rem;
+  font-weight: bold;
+  color: #00bfff;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px #00bfff, 0 0 15px #0077cc;
+  text-decoration: underline
+}
+
+/* Table base styling */
+table.sponsor-chart {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+  text-align: center;
+  box-shadow: 0 0 20px #00bfff50;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #12142b, #1a2238);
+}
+
+/* Table header cells */
+table.sponsor-chart th {
+  background: linear-gradient(135deg, #00bfff, #0077cc);
+  color: white;
+  padding: 16px;
+  font-size: 1.2rem;
+  text-shadow: 0 0 4px #00bfff, 0 0 8px #0077cc;
+}
+
+/* Table body cells */
+table.sponsor-chart td {
+  padding: 14px;
+  font-size: 1rem;
+  color: #e0e0e0;
+  border-top: 1px solid #00bfff30;
+}
+
+/* Checkmark styling */
+table.sponsor-chart td.check {
+  color: #00ffae;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-shadow: 0 0 6px #00ffae, 0 0 12px #00bfff50;
+}
+
+/* Tier name styling */
+.tier-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #00bfff;
+  margin-bottom: 4px;
+}
+
+/* Tier subtext */
+.tier-sub {
+  font-size: 0.9rem;
+  color: #a0cfff;
+  margin-bottom: 2px;
+}
+
+/* Hover effect on table rows */
+table.sponsor-chart tr:hover td {
+  background: rgba(0, 191, 255, 0.1);
+  transition: background 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  table.sponsor-chart th, 
+  table.sponsor-chart td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  td.check { font-size: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+  table.sponsor-chart {
+    font-size: 0.85rem;
+  }
+  h22 { font-size: 2rem; }
+}

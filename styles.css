@@ -7,6 +7,99 @@ body {
   color: #e0e0e0;
 }
 
+/* ====== NAVIGATION BAR ====== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #12142b, #1a2238);
+  border-bottom: 1px solid rgba(0, 191, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00bfff;
+  text-shadow: 0 0 8px #00bfff, 0 0 15px #0077cc;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: transparent;
+  color: #e0e0e0;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background: linear-gradient(135deg, #00bfff, #0077cc);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background: linear-gradient(135deg, #00bfff, #0077cc);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
+}
+
+/* Hamburger menu button - hidden by default */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #00bfff;
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 0 0 6px #00bfff;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background: #00bfff;
+  border-radius: 3px;
+  box-shadow: 0 0 6px #00bfff;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
 /* ====== CONTAINER ====== */
 .container {
   max-width: 1200px;
@@ -74,17 +167,19 @@ p {
 
 /* ====== LISTS ====== */
 ul {
+  /*locationlize it*/
   padding-left: 25px;
   margin-bottom: 25px;
 }
 
+/*for the bullet points*/
 li {
   margin-bottom: 10px;
   line-height: 1.6;
-  color: #c0dfff; /* subtle neon glow for bullets */
+  color: #c0dfff; /* color of bullet points */
 }
 
-/* Highlight Awards differently */
+/* for the awards*/
 .awards li {
   color: #c0dfff;
   font-weight: 600;
@@ -191,19 +286,20 @@ li {
   flex-wrap: wrap;
   margin-top: 20px;
 }
-
+/*give the deatails of images, such as borde,r widtha nf height*/
 .accomplishment-images img {
   width: 320px;
   height: 220px;
   object-fit: cover;
   border-radius: 12px;
   border: 2px solid #00bfff;
+  /*giving a showdowy effect so hoveering looks more realistic, like the button is actually going up*/
   box-shadow:
     0 0 8px #00bfff80,
     0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+/*to be able to increase the size of the image slightly when u hover over it*/
 .accomplishment-images img:hover {
   transform: scale(1.05);
   box-shadow:
@@ -213,6 +309,46 @@ li {
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
+  /* Navigation responsive styles */
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(180deg, #12142b, #1a2238);
+    padding: 80px 30px 30px;
+    gap: 15px;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(0, 191, 255, 0.3);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-link {
+    display: block;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+  }
+
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .nav-brand {
+    font-size: 1.2rem;
+  }
+
   h1 { font-size: 2.2rem; }
   h2 { font-size: 1.6rem; }
   h3 { font-size: 1.1rem; }
@@ -231,6 +367,14 @@ li {
 
   .team-grid { grid-template-columns: 1fr; gap: 25px; }
   .meet-button { padding: 10px 20px; }
+
+  .nav-brand {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    width: 80%;
+  }
 }
 
 
